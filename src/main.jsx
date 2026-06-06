@@ -4,13 +4,21 @@ import './index.css'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import Home from './Home.jsx'
 import About from './About.jsx'
+import Product from './Product.jsx'
+import Customer from './Customer.jsx'
+import Seller from './Seller.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/data'>
+          <Route path='products' element={<Product />} />
+          <Route path='customers' element={<Customer />} />
+          <Route path='Sellers' element={<Seller />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   </StrictMode>,
